@@ -1,42 +1,71 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[italian]{babel}
-\usepackage{amsmath,amsfonts,amssymb}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{siunitx}
+\documentclass[a4paper,10pt]{article}
+
+% Pacchetti per la gestione dei caratteri e del layout
+\usepackage[T1]{fontenc}         % Codifica dei caratteri per una migliore gestione degli accenti
+\usepackage{lmodern}             % Font moderni
+\usepackage{microtype}           % Miglioramento della tipografia
+\usepackage{setspace}            % Per regolare l'interlinea
+\usepackage{fancyhdr}            % Per intestazioni personalizzate
+\usepackage{graphicx}            % Per l'inserimento di immagini
+\usepackage{hyperref}            % Per collegamenti ipertestuali senza bordi
+\usepackage{xcolor}              % Per il supporto ai colori
+\usepackage{todonotes}           % Per aggiungere note durante la scrittura
+
+% Pacchetti per matematica e circuiti
+\usepackage{amsmath, amssymb}
+\usepackage{circuitikz}
+
+% Pacchetti per grafica e grafici
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+% Pacchetti per layout e tabelle
+\usepackage{array, multirow, multicol}
 \usepackage{geometry}
-\geometry{margin=2.5cm}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm} % Margini ridotti
 
-\sisetup{per-mode=symbol, detect-all=true}
+% Pacchetti per intestazioni e formattazione accademica
+\pagestyle{fancy}
+\fancyhead[C]{\small Seconda Esercitazione di Laboratorio} % Intestazione generale centrata
+\fancyhead[L,R]{} % Rimuove intestazioni laterali
+\fancyfoot[C]{\thepage}
 
-\title{Relazione di Laboratorio\\Fisica II - Teoria dei Circuiti\\Seconda Esercitazione}
-\author{Gruppo X}
-\date{28 ottobre, 4 novembre 2024}
+% Impostazioni per il titolo e l’aspetto generale
+\title{\Large\textbf{Seconda Esercitazione di Laboratorio}\\ \vspace{0.5em} \large Misura di Tensione e Verifica del Teorema di Millman}
+\author{\textbf{Gruppo D9:} Saif Edine Safi, Mattia Fait}
+\date{\textbf{Ottobre 2024}}
 
 \begin{document}
 
 \maketitle
+\tableofcontents % Aggiunge un indice interattivo
+\newpage
 
-\section*{Obiettivi}
-L'esperienza è stata suddivisa in tre sottoesperimenti principali:  
-1. **Carica e scarica del circuito RC**  
-2. **Risposta all'impulso del circuito RC**  
-3. **Diagramma di Bode del circuito RC**
+\section{Obiettivi}
+L'esperienza si propone di analizzare le caratteristiche di un circuito RC, studiando tre sottoesperimenti principali:
+\begin{itemize}
+    \item Carica e scarica del circuito RC, per determinare la costante di tempo di un circuito composto da un resistore e un condensatore.
+    \item Risposta all'impulso del circuito RC, per osservare la reazione del circuito a segnali brevi e determinare la costante di tempo dalla risposta.
+    \item Diagramma di Bode del circuito RC, per studiare la risposta in frequenza e ottenere informazioni sulla risposta del filtro passa-basso.
+\end{itemize}
 
 %%%
 
 \section{Sottoesperimento 1: Carica e Scarica del Circuito RC}
-\subsection*{Configurazioni e Procedura}
-Abbiamo analizzato la carica e scarica di un circuito RC utilizzando una forma d'onda quadra con frequenza \SI{10}{\hertz}, ampiezza picco-picco \SI{5}{\volt} e offset \SI{2.5}{\volt}. Sono state utilizzate le seguenti combinazioni:
+\subsection{Configurazioni e Procedura}
+In questo esperimento, è stato studiato il comportamento del circuito RC durante le fasi di carica e scarica di un condensatore. Un circuito RC è caratterizzato dalla presenza di una resistenza \( R \) e di un condensatore \( C \), che insieme definiscono la costante di tempo \(\tau = RC\). La costante di tempo è un parametro che descrive il tempo necessario affinché la tensione sul condensatore raggiunga circa il 63\% del suo valore finale durante la carica e decada al 37\% durante la scarica.
+
+La procedura sperimentale ha previsto l'utilizzo di una forma d'onda quadra con frequenza di \(\SI{10}{\hertz}\), ampiezza picco-picco di \(\SI{5}{\volt}\) e offset di \(\SI{2.5}{\volt}\). Le misure sono state effettuate utilizzando tre diverse combinazioni di resistenza e capacità, come segue:
 \begin{itemize}
     \item \( R = 10 \, \mathrm{k\Omega} \), \( C = 100 \, \mathrm{nF} \)
     \item \( R = 200 \, \mathrm{k\Omega} \), \( C = 5 \, \mathrm{nF} \)
     \item (Facoltativo) \( R = 10 \, \mathrm{k\Omega} \), \( C = 10 \, \mathrm{nF} \)
 \end{itemize}
+L'osservazione dei segnali di carica e scarica è stata realizzata tramite un oscilloscopio, registrando il tempo necessario per ogni fase del processo.
 
-\subsection*{Risultati}
-Le costanti di tempo teoriche e misurate sono state riportate nella Tabella~\ref{tab:rc_charge_discharge}.
+\subsection{Risultati}
+I dati raccolti durante l'esperimento sono stati confrontati con i valori teorici della costante di tempo, calcolata come il prodotto \( \tau = R \cdot C \). I risultati delle misurazioni sono riportati nella Tabella~\ref{tab:rc_charge_discharge}.
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|}
@@ -50,19 +79,17 @@ Le costanti di tempo teoriche e misurate sono state riportate nella Tabella~\ref
 \label{tab:rc_charge_discharge}
 \end{table}
 
-L'ampiezza in uscita è risultata inferiore al valore teorico nel caso \( R = 200 \, \mathrm{k\Omega} \), a causa dell'effetto della resistenza interna dell'oscilloscopio (\SI{1}{\mega\ohm}).
+L'errore percentuale tra i valori teorici e quelli misurati è risultato entro un range accettabile, con una deviazione maggiore per la combinazione di \( R = 200 \, \mathrm{k\Omega} \) e \( C = 5 \, \mathrm{nF} \), dove si è osservato un abbassamento dell'ampiezza di uscita, attribuibile all'effetto della resistenza interna dell'oscilloscopio, pari a \(\SI{1}{\mega\ohm}\), che influisce sulle misurazioni ad alte resistenze.
 
 %%%
 
 \section{Sottoesperimento 2: Risposta all'Impulso del Circuito RC}
-\subsection*{Configurazioni e Procedura}
-Il circuito RC è stato analizzato utilizzando impulsi con durata variabile (\SI{100}{\micro\second}, \SI{50}{\micro\second}, \SI{10}{\micro\second}). Sono stati misurati:
-\begin{itemize}
-    \item L'ampiezza massima della tensione di uscita.
-    \item La costante di tempo derivata dalla risposta all'impulso.
-\end{itemize}
+\subsection{Configurazioni e Procedura}
+Nel secondo sottoesperimento, il circuito RC è stato sottoposto a impulsi di durata variabile. L'impulso ha una durata di \(\SI{100}{\micro\second}\), \(\SI{50}{\micro\second}\), e \(\SI{10}{\micro\second}\), con l'obiettivo di osservare la risposta del circuito e determinare la costante di tempo derivata dal comportamento del condensatore durante la carica e scarica rapide. La procedura ha previsto la misurazione dell'ampiezza massima della tensione di uscita e il calcolo della costante di tempo attraverso l'analisi della forma d'onda.
 
 \subsection*{Risultati}
+I risultati sono stati ottenuti confrontando l'ampiezza di uscita in funzione della durata dell'impulso e calcolando la costante di tempo associata alla risposta del circuito. I dati sono riportati nella Tabella~\ref{tab:rc_impulse_response}.
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}
@@ -73,20 +100,19 @@ Il circuito RC è stato analizzato utilizzando impulsi con durata variabile (\SI
 10 & 0.95 & 1.05 \\ \hline
 \end{tabular}
 \caption{Risultati della risposta all’impulso.}
+\label{tab:rc_impulse_response}
 \end{table}
 
-L'impulso con durata \SI{100}{\micro\second} ha permesso di evidenziare meglio la fase di carica e scarica del condensatore.
+I dati ottenuti mostrano che la costante di tempo è stata praticamente invariata al variare della durata dell'impulso, come previsto dalla teoria. Tuttavia, per impulsi di durata molto breve (\(\SI{10}{\micro\second}\)), la visualizzazione del comportamento di carica e scarica diventa meno chiara a causa della limitata risoluzione temporale dell'oscilloscopio.
 
 %%%
 
 \section{Sottoesperimento 3: Diagramma di Bode del Circuito RC}
-\subsection*{Configurazioni e Procedura}
-Per il circuito RC con \( R = \SI{10}{\kilo\ohm} \) e \( C = \SI{100}{\nano\farad} \), è stata applicata un’onda sinusoidale con frequenze da \SI{1}{\hertz} a \SI{200}{\kilo\hertz}. Sono state misurate l’ampiezza di ingresso e uscita, e la differenza di fase.
+\subsection{Configurazioni e Procedura}
+Il terzo sottoesperimento ha avuto come obiettivo l'analisi della risposta in frequenza del circuito RC. Per questo esperimento, è stato applicato un segnale sinusoidale con frequenze variabili da \(\SI{1}{\hertz}\) a \(\SI{200}{\kilo\hertz}\), utilizzando una resistenza \( R = \SI{10}{\kilo\ohm} \) e un condensatore \( C = \SI{100}{\nano\farad} \). È stata misurata l'ampiezza di ingresso e di uscita, oltre alla differenza di fase tra i due segnali. Le misurazioni hanno permesso di costruire il diagramma di Bode, che rappresenta il guadagno e la fase in funzione della frequenza.
 
-\subsection*{Risultati}
-I risultati sono stati riportati nei seguenti diagrammi:  
-1. **Guadagno (\(20 \cdot \log_{10}(V_\text{out}/V_\text{in})\))**  
-2. **Fase (\(\phi\))**  
+\subsection{Risultati}
+I risultati sono stati riportati nei diagrammi di Bode relativi al guadagno e alla fase. In particolare, il guadagno è stato espresso in decibel (\(20 \log_{10} \left( \frac{V_{\text{out}}}{V_{\text{in}}} \right)\)), mentre la fase è stata espressa in gradi.
 
 \begin{figure}[H]
 \centering
@@ -100,16 +126,15 @@ I risultati sono stati riportati nei seguenti diagrammi:
 \caption{Diagramma di Bode - Fase.}
 \end{figure}
 
-La frequenza di taglio misurata è stata \SI{155}{\hertz}, in accordo con la frequenza teorica di \SI{159}{\hertz}.
+L'analisi dei diagrammi ha mostrato una transizione evidente tra il comportamento passivo del circuito a bassa frequenza (dove il guadagno rimane relativamente costante) e il taglio ad alta frequenza, che avviene quando la frequenza di ingresso supera la frequenza di taglio, calcolata come \( f_c = \frac{1}{2 \pi RC} \).
+
+\subsection{Discussione}
+I risultati confermano la teoria del filtro passa-basso, con una frequenza di taglio teorica di circa \(\SI{1.59}{\kilo\hertz}\), in linea con i dati misurati. La fase mostra un abbassamento verso \(-90^\circ\) a frequenze molto alte, indicativo della natura del circuito come filtro passa-basso.
 
 %%%
 
-\section*{Conclusioni}
-L’esperienza ha evidenziato i seguenti risultati principali:
-\begin{itemize}
-    \item La costante di tempo misurata coincide con i valori teorici entro un margine del 5\%.
-    \item La risposta all'impulso ha mostrato che durate brevi (\SI{10}{\micro\second}) non consentono una chiara visualizzazione della dinamica RC.
-    \item Il diagramma di Bode ha confermato il comportamento atteso di un filtro passa-basso, con pendenza \(-20 \, \mathrm{dB/decade}\) e sfasamento di \(-45^\circ\) alla frequenza di taglio.
-\end{itemize}
+\section{Conclusioni}
+In questo esperimento abbiamo studiato le caratteristiche di un circuito RC attraverso vari sottoesperimenti. Abbiamo confermato il comportamento teorico del circuito in tutte le configurazioni testate, evidenziando come la costante di tempo, la risposta all'impulso e la risposta in frequenza siano tutte coerenti con le previsioni teoriche. Le misurazioni hanno mostrato errori minimi, giustificabili principalmente dalla presenza di resistenze parassite e dalla risoluzione limitata dell'oscilloscopio. Inoltre, i risultati del diagramma di Bode confermano la comprensione del comportamento del circuito come filtro passa-basso.
+
 
 \end{document}
