@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1731861651.93314 "/home/oudeys/Programmazione/TeX/Fisica/lab/lab-fisica-II/II/main.tex" "main.pdf" "main" 1731861652.29448 2
-  "/home/oudeys/Programmazione/TeX/Fisica/lab/lab-fisica-II/II/main.tex" 1731861651.6604 4535 f41ecc3106314d183ae9e95d59810006 ""
+["pdflatex"] 1731863272.78585 "/home/oudeys/Programmazione/TeX/Fisica/lab/lab-fisica-II/II/main.tex" "main.pdf" "main" 1731863273.331 0
+  "/home/oudeys/Programmazione/TeX/Fisica/lab/lab-fisica-II/II/main.tex" 1731863272.57523 4535 8ac4602758558a48126d2058d2636f03 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcbx1095.tfm" 1136768653 1536 0adca69c597a47fe7664bf81057bb53b ""
@@ -26,7 +26,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
@@ -36,7 +35,6 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb" 1215737283 154600 ea54091d31de803b613ba9e80ca51709 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb" 1215737283 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1714953600 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -83,10 +81,10 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1714953600 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1726417685.0617 4547823 614eba97e0451aad345770236b030e55 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1726417478 7766286 e99c3407ec67636d426cb787c83971bc ""
-  "assets/bode_gain.png" 0 -1 0 ""
-  "assets/bode_phase.png" 0 -1 0 ""
-  "main.aux" 1731861652.2254 1154 d061f1aa477e858fe96a2d8283fc0e6b "pdflatex"
-  "main.tex" 1731861651.6604 4535 f41ecc3106314d183ae9e95d59810006 ""
+  "assets/bode_gain.png" 1731863061.83155 148665 36a8beb77df9145cd4a6bb4ae7109c96 ""
+  "assets/bode_phase.png" 1731863061.83255 133872 aa21b506740cdc53063c4e1ca6b689fd ""
+  "main.aux" 1731863273.29022 1154 cca12becb8bc5a1ee6e5b328925e9f33 "pdflatex"
+  "main.tex" 1731863272.57523 4535 8ac4602758558a48126d2058d2636f03 ""
   (generated)
   "main.aux"
   "main.log"
