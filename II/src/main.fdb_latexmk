@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1731866133.36116 "/home/oudeys/Programmazione/TeX/Fisica/lab/lab-fisica-II/II/main.tex" "main.pdf" "main" 1731866133.97933 0
-  "/home/oudeys/Programmazione/TeX/Fisica/lab/lab-fisica-II/II/main.tex" 1731866132.54975 8026 8412f03729ec5fbd9da60f842dd6481d ""
+["pdflatex"] 1732030912.06186 "/home/oudeys/Programmazione/TeX/Fisica/lab/lab-fisica-II/II/src/main.tex" "main.pdf" "main" 1732030912.71337 0
+  "/home/oudeys/Programmazione/TeX/Fisica/lab/lab-fisica-II/II/src/main.tex" 1732030911.01911 8220 0d17d7d9b6d5914bbd5f089c296573d1 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1136768653 1536 c09172c8f235393e6235bb4758357c41 ""
@@ -104,13 +104,14 @@
   "/usr/share/texlive/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1714953600 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1726417685.0617 4547823 614eba97e0451aad345770236b030e55 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1726417478 7766286 e99c3407ec67636d426cb787c83971bc ""
-  "assets/bode_gain.png" 1731863061.83155 148665 36a8beb77df9145cd4a6bb4ae7109c96 ""
-  "assets/bode_phase.png" 1731863061.83255 133872 aa21b506740cdc53063c4e1ca6b689fd ""
-  "main.aux" 1731866133.92974 2968 40fd37f33238f71596b597190f6ff1d2 "pdflatex"
-  "main.out" 1731866133.93074 2185 97479edfce4cb97e7f8673626f9573bd "pdflatex"
-  "main.tex" 1731866132.54975 8026 8412f03729ec5fbd9da60f842dd6481d ""
-  "main.toc" 1731866133.93074 1100 38a0566eea7aefc9e1a6b38df3dab2bb "pdflatex"
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731872468 7766287 54548394f1f340d49eceeca10e4f9e1e ""
+  "assets/I.png" 1732026336.13126 20746 d3a2bfe5aec144caebd4a20b3ec130f9 ""
+  "assets/bode_gain.png" 1732026575.81557 148665 36a8beb77df9145cd4a6bb4ae7109c96 ""
+  "assets/bode_phase.png" 1732026575.84157 133872 aa21b506740cdc53063c4e1ca6b689fd ""
+  "main.aux" 1732030912.65705 3392 3b5247430aaa29976a20198bd5bf94d7 "pdflatex"
+  "main.out" 1732030912.65705 2346 ee23d20cf32c69eb5848c7a5fc1f1483 "pdflatex"
+  "main.tex" 1732030911.01911 8220 0d17d7d9b6d5914bbd5f089c296573d1 ""
+  "main.toc" 1732030912.65805 1241 a5fe0b01efae52418f9014bab3eb6261 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

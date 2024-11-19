@@ -34,15 +34,23 @@ L'esperienza si propone di analizzare le caratteristiche di un circuito RC, stud
 
 %%%
 
-\section{Sottoesperimento 1: Carica e Scarica del Circuito RC}
+\section{Esperimento 1: Carica e Scarica del Circuito RC}
 \subsection{Configurazioni e Procedura}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/I.png}
+    \caption{Circuito esperimento 1.}
+    \label{fig:example}
+\end{figure}
+
 In questo esperimento, è stato studiato il comportamento del circuito RC durante le fasi di carica e scarica di un condensatore. Un circuito RC è caratterizzato dalla presenza di una resistenza \( R \) e di un condensatore \( C \), che insieme definiscono la costante di tempo \(\tau = RC\). La costante di tempo è un parametro che descrive il tempo necessario affinché la tensione sul condensatore raggiunga circa il 63\% del suo valore finale durante la carica e decada al 37\% durante la scarica.
 
 La procedura sperimentale ha previsto l'utilizzo di una forma d'onda quadra con frequenza di \(\SI{10}{\hertz}\), ampiezza picco-picco di \(\SI{5}{\volt}\) e offset di \(\SI{2.5}{\volt}\). Le misure sono state effettuate utilizzando tre diverse combinazioni di resistenza e capacità, come segue:
 \begin{itemize}
     \item \( R = 10 \, \mathrm{k\Omega} \), \( C = 100 \, \mathrm{nF} \)
     \item \( R = 200 \, \mathrm{k\Omega} \), \( C = 5 \, \mathrm{nF} \)
-    \item (Facoltativo) \( R = 10 \, \mathrm{k\Omega} \), \( C = 10 \, \mathrm{nF} \)
+    \item \( R = 10 \, \mathrm{k\Omega} \), \( C = 10 \, \mathrm{nF} \)
 \end{itemize}
 L'osservazione dei segnali di carica e scarica è stata realizzata tramite un oscilloscopio, registrando il tempo necessario per ogni fase del processo.
 
@@ -64,9 +72,11 @@ I dati raccolti durante l'esperimento sono stati confrontati con i valori teoric
 
 L'errore percentuale tra i valori teorici e quelli misurati è risultato entro un range accettabile, con una deviazione maggiore per la combinazione di \( R = 200 \, \mathrm{k\Omega} \) e \( C = 5 \, \mathrm{nF} \), dove si è osservato un abbassamento dell'ampiezza di uscita, attribuibile all'effetto della resistenza interna dell'oscilloscopio, pari a \(\SI{1}{\mega\ohm}\), che influisce sulle misurazioni ad alte resistenze.
 
+\subsection{Osservazioni}
+
 %%%
 
-\section{Sottoesperimento 2: Risposta all'Impulso del Circuito RC}
+\section{Esperimento 2: Risposta all'Impulso del Circuito RC}
 \subsection{Configurazioni e Procedura}
 Nel secondo sottoesperimento, il circuito RC è stato sottoposto a impulsi di durata variabile. L'impulso ha una durata di \(\SI{100}{\micro\second}\), \(\SI{50}{\micro\second}\), e \(\SI{10}{\micro\second}\), con l'obiettivo di osservare la risposta del circuito e determinare la costante di tempo derivata dal comportamento del condensatore durante la carica e scarica rapide. La procedura ha previsto la misurazione dell'ampiezza massima della tensione di uscita e il calcolo della costante di tempo attraverso l'analisi della forma d'onda.
 
@@ -88,9 +98,11 @@ I risultati sono stati ottenuti confrontando l'ampiezza di uscita in funzione de
 
 I dati ottenuti mostrano che la costante di tempo è stata praticamente invariata al variare della durata dell'impulso, come previsto dalla teoria. Tuttavia, per impulsi di durata molto breve (\(\SI{10}{\micro\second}\)), la visualizzazione del comportamento di carica e scarica diventa meno chiara a causa della limitata risoluzione temporale dell'oscilloscopio.
 
+\subsection{Osservazioni}
+
 %%%
 
-\section{Sottoesperimento 3: Diagramma di Bode del Circuito RC}
+\section{Esperimento 3: Diagramma di Bode del Circuito RC}
 \subsection{Configurazioni e Procedura}
 Il terzo sottoesperimento ha avuto come obiettivo l'analisi della risposta in frequenza del circuito RC. Per questo esperimento, è stato applicato un segnale sinusoidale con frequenze variabili da \(\SI{1}{\hertz}\) a \(\SI{200}{\kilo\hertz}\), utilizzando una resistenza \( R = \SI{10}{\kilo\ohm} \) e un condensatore \( C = \SI{100}{\nano\farad} \). È stata misurata l'ampiezza di ingresso e di uscita, oltre alla differenza di fase tra i due segnali. Le misurazioni hanno permesso di costruire il diagramma di Bode, che rappresenta il guadagno e la fase in funzione della frequenza.
 
@@ -113,6 +125,8 @@ L'analisi dei diagrammi ha mostrato una transizione evidente tra il comportament
 
 \subsection{Osservazioni}
 I risultati confermano la teoria del filtro passa-basso, con una frequenza di taglio teorica di circa \(\SI{1.59}{\kilo\hertz}\), in linea con i dati misurati. La fase mostra un abbassamento verso \(-90^\circ\) a frequenze molto alte, indicativo della natura del circuito come filtro passa-basso.
+
+
 
 %%%
 
