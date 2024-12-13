@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{amsmath,amsfonts,amssymb}
@@ -11,6 +11,9 @@
 \usepackage{array}      % Per migliorare l'allineamento delle celle
 \usepackage{booktabs}   % Per linee professionali nella tabella
 \usepackage{multicol}
+\usepackage{subcaption} % Per i sottotitoli dei subplot
+\usepackage{caption}    % Per gestire le didascalie delle figure
+\usepackage{circuitikz} % Per disegnare circuiti
 
 
 
@@ -31,39 +34,40 @@
 %\begin{multicols}{2}
     
 \section{Obiettivi}
-L'esperienza si propone di analizzare le caratteristiche di un circuito RC, studiando tre sottoesperimenti principali:
+
+L'esperienza si propone di analizzare le caratteristiche del \textit{circuito RC} mostrato in Figura ~\ref{fig:exp1}, studiando \textit{tre sottoesperimenti principali}:
 \begin{itemize}
-    \item Carica e scarica del circuito RC, per determinare la costante di tempo di un circuito composto da un resistore e un condensatore.
-    \item Risposta all'impulso del circuito RC, per osservare la reazione del circuito a segnali brevi e determinare la costante di tempo dalla risposta.
-    \item Diagramma di Bode del circuito RC, per studiare la risposta in frequenza e ottenere informazioni sulla risposta del filtro passa-basso.
+    \item \textbf{\hyperref[sec:carica_scarica]{Carica e scarica del circuito RC}
+    }: determinare la \textit{costante di tempo} di un circuito composto da un \textit{resistore} e un \textit{condensatore}.
+    \item \textbf{\hyperref[sec:risposta_impulso]{Risposta all'impulso del circuito RC}}: osservare la reazione del circuito a segnali brevi e determinare la \textit{costante di tempo dalla risposta}.
+    \item \textbf{\hyperref[sec:diagramma_bode]{Diagramma di Bode del circuito RC}}: studiare la \textit{risposta in frequenza} e ottenere informazioni sulla \textit{risposta del filtro passa-basso}.
 \end{itemize}
-
-%%%
-
-\section{Esperimento 1: Carica e Scarica del Circuito RC}
-
-\subsection{Configurazioni e Procedura}
-
 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\textwidth]{assets/I.png}
-    \caption{Circuito esperimento 1.}
+    \caption{Circuito RC sperimentale.}
     \label{fig:exp1}
 \end{figure}
 
+
+%%%
+
+\section{Carica e Scarica del Circuito RC}  \label{sec:carica_scarica}
+
+\subsection{Configurazioni e Procedura}
+
 \begin{multicols}{2}
-
-In questo esperimento, è stato studiato il comportamento del circuito RC durante le fasi di carica e scarica di un condensatore. Un circuito RC è caratterizzato dalla presenza di una resistenza \( R \) e di un condensatore \( C \), che insieme definiscono la costante di tempo \(\tau = RC\). La costante di tempo è un parametro che descrive il tempo necessario affinché la tensione sul condensatore raggiunga circa il 63\% del suo valore finale durante la carica e decada al 37\% durante la scarica.
-
-La procedura sperimentale ha previsto l'utilizzo di una forma d'onda quadra con frequenza di \(\SI{10}{\hertz}\), ampiezza picco-picco di \(\SI{5}{\volt}\) e offset di \(\SI{2.5}{\volt}\). Le misure sono state effettuate utilizzando tre diverse combinazioni di resistenza e capacità, come segue:
+In questo esperimento, è stato studiato il \textit{comportamento del circuito RC} durante le \textit{fasi di carica e scarica di un condensatore}.\\
+Un circuito RC è caratterizzato dalla presenza di una \textit{resistenza \( R \)} e di un \textit{condensatore \( C \)}, che insieme definiscono la \textbf{costante di tempo \(\tau = RC\)}. La costante di tempo è un parametro che descrive il tempo necessario affinché la tensione sul condensatore raggiunga circa il 63\% del suo valore finale durante la carica e decada al 37\% durante la scarica. \\
+La procedura sperimentale ha previsto l'utilizzo di una \textit{forma d'onda quadra} con frequenza di \(\SI{10}{\hertz}\), ampiezza picco-picco di \(\SI{5}{\volt}\) e offset di \(\SI{2.5}{\volt}\). Le misure sono state effettuate utilizzando \textit{tre diverse combinazioni di resistenza e capacità}, come segue:
 \begin{itemize}
-    \item \( R = 10 \, \mathrm{k\Omega} \), \( C = 100 \, \mathrm{nF} \)
-    \item \( R = 200 \, \mathrm{k\Omega} \), \( C = 5 \, \mathrm{nF} \)
-    \item \( R = 10 \, \mathrm{k\Omega} \), \( C = 10 \, \mathrm{nF} \)
+    \item \( R = 10 \, \mathrm{k\Omega} \) \\ \( C = 100 \mathrm{nF} \)
+    \item \( R = 200 \, \mathrm{k\Omega} \) \\ \( C = 5 \, \mathrm{nF} \)
+    \item \( R = 10 \, \mathrm{k\Omega} \) \\ \( C = 10 \, \mathrm{nF} \)
 \end{itemize}
-L'osservazione dei segnali di carica e scarica è stata realizzata tramite un oscilloscopio, registrando il tempo necessario per ogni fase del processo.
+L'osservazione dei \textit{segnali di carica e scarica} è stata realizzata tramite un \textit{oscilloscopio}, registrando il tempo necessario per ogni fase del processo.
 \end{multicols}
 
 \subsection{Risultati}
@@ -73,26 +77,48 @@ I dati raccolti durante l'esperimento sono stati confrontati con i valori teoric
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{Resistenza (\si{\kilo\ohm})} & \textbf{Capacità (\si{\nano\farad})} & \textbf{Costante di Tempo Teorica (\si{\milli\second})} & \textbf{Errore (\%)} \\ \hline
-10 & 100 & 1.00 & 2.0 \\ \hline
-200 & 5 & 1.00 & 16.7 \\ \hline
-10 & 10 & 0.10 & 1.5 \\ \hline
+\textbf{Resistenza (\si{\kilo\ohm})} & \textbf{Capacità (\si{\nano\farad})} & \textbf{\(\tau\) teorica (\si{\milli\second})} & \textbf{\(\tau\) misurata (\si{\milli\second})} \\ \hline
+10 & 100 & 1.00 & 0.95 \\ \hline
+200 & 5 & 1.00 & 0.40 \\ \hline
+10 & 10 & 0.10 & 0.09 \\ \hline
 \end{tabular}
 \caption{Risultati della carica e scarica del circuito RC.}
 \label{tab:rc_charge_discharge}
 \end{table}
 
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{assets/I/10-100.png}
+        \caption{\(\tau = 0.95 \si{\milli\second}\)}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{assets/I/200-5.png}
+        \caption{\(\tau = 0.40 \si{\milli \second}\)}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{assets/I/10-10.png}
+        \caption{\(\tau = 0.09 \si{\milli\second}\)}
+    \end{minipage}
+\end{figure}
+
 
 \subsection{Osservazioni}
-L'errore percentuale tra i valori teorici e quelli misurati è risultato entro un range accettabile, con una deviazione maggiore per la combinazione di \( R = 200 \, \mathrm{k\Omega} \) e \( C = 5 \, \mathrm{nF} \), dove si è osservato un abbassamento dell'ampiezza di uscita, attribuibile all'effetto della resistenza interna dell'oscilloscopio, pari a \(\SI{1}{\mega\ohm}\), che influisce sulle misurazioni ad alte resistenze.
 
-Infatti studiando il circuito con le leggi di Kirchhoff si trova che il potenziale massimo raggiunto nella fase di carica vale \(V_{out} = \frac{V_{in} \cdot R_0}{R_0 + R}\) , da cui possiamo ricavare:
+L'errore percentuale tra i valori teorici e quelli misurati è risultato entro un range accettabile, con una \textbf{deviazione maggiore per la combinazione di} \( R = 200 \, \mathrm{k\Omega} \) e \( C = 5 \, \mathrm{nF} \), dove si è osservato un \textit{abbassamento dell'ampiezza di uscita}, attribuibile all'effetto della \textit{resistenza interna dell'oscilloscopio}, pari circa a \(\SI{1}{\mega\ohm}\), che \textit{influisce sulle misurazioni ad alte resistenze (200 \si{\kilo\ohm})}. \\
+Per il caso 200 \si{\kilo\ohm} - 5 \si{\nano\farad} la \textit{tensione massima misurata} è pari a \(V_{out}=4.14 \si{\volt}\).
+Analizzando il circuito con le leggi di Kirchhoff si trova che il potenziale massimo raggiunto nella fase di carica vale \(V_{out} = \frac{V_{in} \cdot R_0}{R_0 + R}\) , da cui possiamo ricavare la \textbf{resistenza interna dell'oscilloscopio}:
 \[
     \begin{aligned}
         R_0 
         &= \frac{V_{out} \cdot R}{V_{in} - V_{out}} \\
         &= \frac{4.14 V \cdot 2.00 \cdot 10^5 \Omega}{5.0 V - 4.14 V}    \\
-        &= 962790 \\
+        &\approx 962790 \Omega\\
         & \approx 1 M \Omega
     \end{aligned}
 \]
@@ -101,37 +127,60 @@ Infatti studiando il circuito con le leggi di Kirchhoff si trova che il potenzia
 %%%
 
 
-\section{Esperimento 2: Risposta all'Impulso del Circuito RC}
+\section{Risposta all'Impulso del Circuito RC} \label{sec:risposta_impulso}
 
 \subsection{Configurazioni e Procedura}
 
 \begin{multicols}{2}
-In questo esperimento, il circuito RC illustrato in Figura~\ref{fig:exp1} è stato analizzato per valutare la sua risposta a impulsi di diversa durata. Le durate degli impulsi erano rispettivamente \(\SI{100}{\micro\second}\), \(\SI{50}{\micro\second}\) e \(\SI{10}{\micro\second}\), con una tensione di ingresso di ampiezza picco-picco pari a \(\SI{5}{\volt}\) e un offset di \(\SI{2.5}{\volt}\). La resistenza e la capacità utilizzate erano \(\SI{10}{\kilo\ohm}\) e \(\SI{100}{\nano\farad}\), rispettivamente.
-
+In questo esperimento, il \textit{circuito RC} illustrato in Figura ~\ref{fig:exp1} è stato analizzato per valutare la sua \textbf{risposta a impulsi di diversa durata}.\\
+Le \textit{durate degli impulsi} erano rispettivamente \(\SI{100}{\micro\second}\), \(\SI{50}{\micro\second}\) e \(\SI{10}{\micro\second}\), con una \textit{tensione di ingresso di ampiezza picco-picco} pari a \(\SI{5}{\volt}\) e un offset di \(\SI{2.5}{\volt}\).\\
+La \textit{resistenza} e la \textit{capacità} utilizzate erano \(\SI{10}{\kilo\ohm}\) e \(\SI{100}{\nano\farad}\), rispettivamente.\\
 La procedura prevedeva:
 \begin{enumerate}
-    \item Collegare l'uscita del generatore di forme d’onda sia al circuito che all'oscilloscopio tramite un connettore a "T".
-    \item Monitorare il potenziale ai capi del condensatore utilizzando il secondo canale dell'oscilloscopio.
-    \item Misurare la risposta del circuito analizzando l’ampiezza massima della tensione di uscita per ogni impulso e stimare la costante di tempo (\(\tau\)) calcolata durante la fase di carica e scarica rapida.
+    \item Collegare l'uscita del generatore di forme d’onda sia al circuito che all'oscilloscopio tramite un \textit{connettore a "T"}.
+    \item Monitorare il \textit{potenziale ai capi del condensatore} utilizzando il \textit{secondo canale dell'oscilloscopio}.
+    \item Misurare la risposta del circuito analizzando l’\textit{ampiezza massima della tensione di uscita} per ogni impulso e stimare la \textit{costante di tempo} (\(\tau\)) calcolata durante la fase di carica e scarica rapida.
 \end{enumerate}
 
 \end{multicols}
 
 \subsection{Risultati}
-I risultati dell’esperimento sono riportati nella Tabella~\ref{tab:rc_impulse_response}. Le misure mostrano una costante di tempo pressoché invariata al variare della durata dell’impulso, a conferma della coerenza con la teoria per i valori di \(\tau = R \cdot C\). Tuttavia, per durate di impulso molto brevi (\(\SI{10}{\micro\second}\)), l’accuratezza della misura è stata limitata dalla risoluzione temporale dell'oscilloscopio.
+I risultati dell’esperimento sono riportati nella Tabella ~\ref{tab:rc_impulse_response}.\\
+Le misure mostrano una costante di tempo pressoché invariata al variare della durata dell’impulso, a conferma della coerenza con la teoria per i valori di \(\tau = R \cdot C\). Tuttavia, per \textit{durate di impulso molto brevi} (\(\SI{10}{\micro\second}\)), l’\textit{accuratezza della misura} è stata \textit{limitata dalla risoluzione temporale dell'oscilloscopio}.
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{Durata Impulso (\si{\micro\second})} & \textbf{Ampiezza Massima (\si{\volt})} & \textbf{Costante di Tempo (\si{\milli\second})} \\ \hline
-100 & 4.85 & 1.01 \\ \hline
-50 & 3.21 & 1.02 \\ \hline
-10 & 0.95 & 1.05 \\ \hline
+\textbf{Durata Impulso (\si{\micro\second})} & \textbf{Ampiezza Massima (\si{\volt})} & \textbf{\(\tau\) teorica (\si{\milli\second})} & \textbf{\(\tau\) misurata (\si{\milli\second})} \\ \hline
+100 & 4.85 & 1 & 0.85 \\ \hline
+50 & 3.21 & 1 & 0.60 \\ \hline
+10 & 0.95 & 1 & 1.15 \\ \hline
 \end{tabular}
 \caption{Risultati sperimentali della risposta all’impulso del circuito RC.}
 \label{tab:rc_impulse_response}
 \end{table}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{assets/II/100.png}
+        \caption{\(\tau = 0.95 \si{\milli\second}\)}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{assets/II/50.png}
+        \caption{\(\tau = 0.40 \si{\milli \second}\)}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{assets/II/10.png}
+        \caption{\(\tau = 0.09 \si{\milli\second}\)}
+    \end{minipage}
+\end{figure}
 
 \subsection{Osservazioni}
 \begin{itemize}
@@ -143,7 +192,7 @@ I risultati dell’esperimento sono riportati nella Tabella~\ref{tab:rc_impulse_
 %%%
 
 
-\section{Esperimento 3: Diagramma di Bode del Circuito RC}
+\section{Diagramma di Bode del Circuito RC} \label{sec:diagramma_bode}
 
 \subsection{Configurazioni e Procedura}
 
@@ -169,21 +218,25 @@ Le seguenti operazioni sono state eseguite:
 \end{multicols}
 
 \subsection{Risultati}
-I diagrammi di Bode relativi al guadagno e alla fase sono riportati in Figura~\ref{fig:bode_gain} e Figura~\ref{fig:bode_phase}. 
+I diagrammi di Bode relativi al guadagno e alla fase sono riportati in Figura ~\ref{fig:bode_gain} e Figura ~\ref{fig:bode_phase}.
+
+\begin{multicols}{2}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/bode_gain.png}
+\includegraphics[width=0.45\textwidth]{assets/III/guadagno.png}
 \caption{Diagramma di Bode - Guadagno.}
 \label{fig:bode_gain}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{assets/bode_phase.png}
+\includegraphics[width=0.45\textwidth]{assets/III/fase.png}
 \caption{Diagramma di Bode - Fase.}
 \label{fig:bode_phase}
 \end{figure}
+
+\end{multicols}
 
 Dal diagramma del guadagno emerge una regione a bassa frequenza (\(f < f_c\)) dove \(V_{\text{out}} \approx V_{\text{in}}\), seguita da una transizione a frequenze superiori alla frequenza di taglio teorica:
 \[
